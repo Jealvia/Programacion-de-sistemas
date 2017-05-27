@@ -26,12 +26,14 @@ int main(int argc, char *argv[]){
 
 void cifrado(char *cadena,int num){
 	int tam,tamalfabeto,bandera,i,b;
-        char alfabeto_min[27]="abcdefghijklmnopqrstuvwxyz";
-	char alfabeto_may[27]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         tam=strlen(cadena);
 	tamalfabeto=strlen(alfabeto_min);
 	char codigo[1024]={0};
+        char alfabeto_min[27]="abcdefghijklmnopqrstuvwxyz";
+        char alfabeto_may[27]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 	printf("Cifrado cíclico \n");
+
 	for(i=0;i<tam;i++){
 		bandera=0;
 			for(b=0;b<tamalfabeto;b++){
