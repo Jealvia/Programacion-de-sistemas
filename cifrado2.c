@@ -64,5 +64,27 @@ void cifrado(char *cadena,int num){
 	printf("Mensaje cifrado: ");
 	printf(codigo);
 	printf("\n");
+	morse(codigo);
 
+}
+
+void morse(char *palabra){
+	char resultado[1024]={0};
+	int i,j,tam,tam_alf,bandera;
+	char minusculas[60]="abcdefghijklmnopqrstuvwxyz 0123456789";
+	char mayusculas[60]="ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789";
+	char morse[60][60]={".-","—···","-·-·","-··",".","··-·","--·","····","··","·---","-·-","·-··","--","-·","---","·--·",
+			    "--·-","·-·","···","-","··-","···-","·--","-··-","-·--","--··","/","·----","··---","···--","····-","·····",
+"-····","--···","---··","----·","-----"};
+	tam=strlen(palabra);
+	tam_alf=strlen(minusculas);
+	printf("Mensaje cifrado en morse: ");
+	for(i=0;i<tam;i++){
+		for(j=0;j<tam_alf;j++){
+			if(palabra[i]==minusculas[j] || palabra[i]==mayusculas[j]){
+				printf("%s",morse[j]);
+			}
+		}
+	}
+	printf("\n");
 }
